@@ -28,7 +28,7 @@ The EVENT API is a RESTful API designed to manage events, users, and tickets. It
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/event-api.git
+   git clone https://github.com/excellencyjumo/eventApi.git
    ```
 
 2. Navigate to the project directory:
@@ -59,7 +59,7 @@ The EVENT API is a RESTful API designed to manage events, users, and tickets. It
    npm start
    ```
 
-   The server will run using `render host` .
+   The server will run using `render host` on `https://event-simple-service.onrender.com\api` .
 
 ## API Endpoints
 
