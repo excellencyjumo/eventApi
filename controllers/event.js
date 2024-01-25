@@ -26,7 +26,6 @@ const eventController = {
         .skip((page - 1) * limit)
         .limit(limit)
         .populate('attendees');
-
       res.json(events);
     } catch (error) {
       console.error(error);

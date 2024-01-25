@@ -13,17 +13,22 @@ const ticketRoutes = require('./routes/ticket');
 app.use(express.json());
 
 app.use('/api', (req, res,next) => {
-  if(req.url==='/api'){
+  if(req.originalUrl=='/api'){
     return res.status(200).json({ message: 'Welcome to the API' });
   }
-  next(`${req.url} is not available.`);
+  next();
 });
 
 app.use('/api/users', userRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/tickets', ticketRoutes);
+
+app.use((req,res,next)=>{
+  next(new Error(`${req.url} is not available.`));
+})
+//error handling
 app.use((error,req,res,next)=>{
-  res.status(400).json({message: error});
+  res.status(404).json({message: error.message});
 })
 
 const PORT = process.env.PORT || 3000;
