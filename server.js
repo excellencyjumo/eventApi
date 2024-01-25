@@ -23,7 +23,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/tickets', ticketRoutes);
 app.use((error,req,res,next)=>{
-  res.status(400).json({message: error.message});
+  res.status(400).json({message: error});
 })
 
 const PORT = process.env.PORT || 3000;
