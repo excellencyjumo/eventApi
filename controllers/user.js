@@ -15,7 +15,7 @@ const userController = {
         const token = signJwt(user._id);
   
         res.header('x-auth', token);
-        res.status(201).json({ user, token });
+        res.status(201).json({ message:"Successfull registration", token });
       } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Internal Server Error' });
