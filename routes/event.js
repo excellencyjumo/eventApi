@@ -9,7 +9,7 @@ router.get('/',authMiddleware , eventController.getAllEvents);
 router.get('/:eventId', eventController.getEventById);
 
 // Private routes (require authentication)
-router.use(authMiddleware); // Apply auth middleware for the routes below
+router.use(authMiddleware); 
 
 router.put('/:eventId', eventController.updateEventById);
 router.delete('/:eventId', eventController.deleteEventById);
