@@ -4,7 +4,7 @@ const authMiddleware = require('../middlewares/auth');
 const eventController = require('../controllers/event');
 
 // Public routes
-router.post('/', eventController.createEvent);
+router.post('/', authMiddleware , eventController.createEvent);
 router.get('/', eventController.getAllEvents);
 router.get('/:eventId', eventController.getEventById);
 

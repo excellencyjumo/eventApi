@@ -1,5 +1,6 @@
 const { User } = require('../models/user');
 const { hashPassword, comparePassword } = require('../utils/bcrypt');
+const {signJwt} = require("../utils/jwt");
 
 const userController = {
     registerUser: async (req, res) => {
@@ -29,7 +30,7 @@ const userController = {
         if (!user) {
           return res.status(401).json({ error: 'Invalid credentials' });
         }
-  
+        console.log(user);
         const isPasswordMatch = await comparePassword(password, user.password);
   
         if (!isPasswordMatch) {
