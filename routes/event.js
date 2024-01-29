@@ -5,7 +5,7 @@ const eventController = require('../controllers/event');
 
 // Public routes
 router.post('/', authMiddleware , eventController.createEvent);
-router.get('/', eventController.getAllEvents);
+router.get('/',authMiddleware , eventController.getAllEvents);
 router.get('/:eventId', eventController.getEventById);
 
 // Private routes (require authentication)
